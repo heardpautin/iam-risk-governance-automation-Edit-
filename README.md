@@ -1,133 +1,140 @@
-# IAM Risk Governance & Automation
+# IAM Governance & Risk-Based Access Control System
 
 ## Overview
-This project implements an Identity & Access Management (IAM) risk governance solution that evaluates user identity risk and operationalizes it through automated workflows.
 
-Built using Microsoft Power BI and Microsoft Power Automate, this project demonstrates how identity risk scoring can move from analysis to action in a governance-driven security model.
+This project implements an end-to-end Identity and Access Management (IAM) governance system that combines risk-based identity analytics with automated access request and approval workflows.
 
-It reflects real-world Identity Governance and Administration (IGA) and GRC principles including:
-- Identity lifecycle risk evaluation
-- Role-based access control (RBAC)
-- Risk-based access governance
-- Security automation workflows
+It demonstrates how identity governance operates in modern enterprises by connecting identity risk scoring, access request intake, automated approval routing, and audit logging into a single system.
+
+Built using Microsoft Power BI, Power Apps, SharePoint, and Power Automate, this project simulates a real-world Identity Governance and Administration (IGA) lifecycle.
 
 ---
 
-## Core Concept
+## Architecture
 
-Modern identity governance is driven by continuous risk evaluation rather than static access rules.
-
-This project models identity risk using key enterprise signals:
-
-- Privileged access (Admin roles)
-- User inactivity (stale accounts)
-- Department sensitivity (e.g., Finance)
-- Account status (active / temporary / inactive)
-
-These signals are combined into a structured risk scoring model that supports governance decisions.
+Identity Data → Risk Scoring Engine → Risk Level Output → Access Request System → Workflow Automation → Audit Logging → Reporting
 
 ---
 
-## Risk Scoring Model (Power BI)
+## Business Problem
 
-The risk engine calculates a weighted score for each identity:
+Organizations struggle with:
+- Excessive user access privileges
+- Lack of structured approval workflows
+- Manual and inconsistent governance decisions
+- Limited visibility into identity risk
+- Weak audit and compliance traceability
 
-### Inputs:
-- Role-based risk (privileged access)
-- Inactivity risk (last login duration)
-- Department-based sensitivity
-- Account type / status
-
-### Outputs:
-- **RiskScore (numeric value)**
-- **RiskLevel (Low / Medium / High classification)**
+This system addresses these challenges through structured identity governance and automation.
 
 ---
 
-## Visualization Layer
+## Core Components
 
-The Power BI dashboard provides:
+### Risk Scoring Engine (Power BI)
+Evaluates identity risk using:
+- Privileged access roles
+- User inactivity (last login)
+- Department sensitivity
+- Account status
 
-- User-level risk table view
-- RiskScore comparison across identities
-- RiskLevel categorization
-- Conditional formatting:
-  - High → Red
-  - Medium → Orange
-  - Low → Green
-
-This enables rapid identification of high-risk identity patterns.
-
----
-
-## Automation Layer (Power Automate – Implemented & Tested)
-
-This project includes an implemented workflow automation layer using Microsoft Power Automate integrated with Power BI risk outputs.
-
-### Implemented Workflow:
-
-- Power Automate flow triggered by Power BI-derived RiskLevel conditions
-- Automated alerts for High-risk identity states
-- Event-driven notification logic simulating identity governance response behavior
-- Manual testing performed to validate trigger conditions and workflow execution
-
-### Validation:
-
-The workflow was tested using sample identity scenarios to confirm:
-- Correct trigger activation based on RiskLevel thresholds
-- Successful execution of automated alerts
-- End-to-end flow from risk detection to notification response
-
-### Outcome:
-
-This demonstrates a working prototype of event-driven identity governance where risk scoring is operationalized into automated response workflows.
+Outputs:
+- RiskScore
+- RiskLevel (Low / Medium / High)
 
 ---
 
-## Tools & Technologies
+### Access Request System (Power Apps)
+Users submit structured access requests including:
+- Requested role
+- Department
+- Business justification
+- Identity metadata
+
+---
+
+### Governance Workflow (Power Automate)
+Automates approval routing based on risk:
+
+- High Risk → Security/Compliance review
+- Medium Risk → Manager approval
+- Low Risk → Standard or auto-approval
+
+Includes:
+- Conditional routing logic
+- Approval/rejection actions
+- Automated notifications
+- SharePoint write-back updates
+
+---
+
+### Data & Audit Layer (SharePoint)
+Stores:
+- User identity data
+- Access requests
+- Approval decisions
+- Reviewer comments
+- Audit trail history
+
+---
+
+### Reporting Layer (Power BI)
+Provides governance visibility:
+- Risk distribution across users
+- Access approval trends
+- High-risk identity patterns
+- Department-level analysis
+
+---
+
+## Governance Logic
+
+- High-risk identities trigger enhanced review
+- Privileged roles require additional approval layers
+- Inactive accounts are flagged for review
+- Department sensitivity influences risk scoring
+- All decisions are logged for auditability
+
+---
+
+## IAM Lifecycle Modeled
+
+1. Identity evaluation
+2. Risk scoring
+3. Access request submission
+4. Approval workflow execution
+5. Decision enforcement
+6. Audit logging
+7. Governance reporting
+
+---
+
+## Tools Used
 
 - Microsoft Power BI
-- DAX (Data Analysis Expressions)
+- Microsoft Power Apps
 - Microsoft Power Automate
-- Identity Governance & Administration (IGA) concepts
-- Role-Based Access Control (RBAC)
-- Least Privilege principles
-- Security workflow automation patterns
+- Microsoft SharePoint
 
 ---
 
 ## Real-World Alignment
 
-This project aligns with enterprise identity governance systems such as:
-
-- Microsoft Entra ID risk-based access policies
-- Conditional access decision frameworks
-- Identity lifecycle governance models
-- Security monitoring and alerting systems
-
-It demonstrates how identity governance evolves from reporting into automated enforcement and response.
+This system aligns with enterprise identity governance practices including:
+- Microsoft Entra ID Identity Protection
+- Conditional Access frameworks
+- SOC 2 / ISO 27001 access controls
+- Identity Governance and Administration (IGA) systems
 
 ---
 
-## Future Enhancements
+## Outcome
 
-- Add MFA strength scoring and authentication risk weighting
-- Introduce anomaly detection (impossible travel, unusual login patterns)
-- Expand role hierarchy and entitlement modeling
-- Add multi-step Power Automate escalation workflows
-- Integrate semantic model layer for advanced analytics
-- Extend into AI-assisted risk interpretation for governance reporting
+This project demonstrates a complete IAM governance lifecycle system that connects identity risk analysis, access decisions, workflow automation, and audit visibility into a unified governance model.
 
 ---
 
-## Purpose
+## Author
 
-This project demonstrates practical IAM / IGA / GRC engineering capability by showing:
-
-- Identity governance design and implementation
-- Risk-based access evaluation
-- Security automation integration
-- Workflow-driven governance response
-- Modern identity security architecture thinking
-
-It represents a working prototype of how identity risk scoring systems evolve into automated governance and response frameworks in enterprise environments.
+Craig Heard  
+IAM | GRC | Cloud Security | Identity Governance
