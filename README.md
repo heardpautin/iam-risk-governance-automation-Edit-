@@ -133,7 +133,19 @@ This system aligns with enterprise identity governance practices including:
 This project demonstrates a complete IAM governance lifecycle system that connects identity risk analysis, access decisions, workflow automation, and audit visibility into a unified governance model.
 
 ---
+## Roadmap / Future Enhancements
 
+This project is currently a functional proof-of-concept demonstrating end-to-end IAM governance workflows.
+
+Planned enhancements include:
+- Improved role-based access catalog
+- Expanded risk scoring logic
+- Additional workflow branching for complex approval scenarios
+- Enhanced reporting and dashboard refinements in Power BI
+- Integration with enterprise IAM platforms (e.g., Entra ID / SailPoint concepts)
+
+These enhancements are intended to simulate scaling this POC into an enterprise-grade identity governance system.
+---
 ## Author
 
 Craig Heard  
