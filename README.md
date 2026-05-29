@@ -144,7 +144,7 @@ Planned enhancements include:
 - Enhanced reporting and dashboard refinements in Power BI
 - Integration with enterprise IAM platforms (e.g., Entra ID / SailPoint concepts)
 
-These enhancements are intended to simulate scaling this POC into an enterprise-grade identity governance system.
+This project implements an end-to-end IAM governance workflow integrating identity risk evaluation, access request processing, and automated approval decisioning across Power Platform services.
 ---
 ## Author
 
