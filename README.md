@@ -145,6 +145,8 @@ Planned enhancements include:
 - Integration with enterprise IAM platforms (e.g., Entra ID / SailPoint concepts)
 
 This project implements an end-to-end IAM governance workflow integrating identity risk evaluation, access request processing, and automated approval decisioning across Power Platform services.
+
+This project is part of a broader Identity & Governance portfolio focused on risk-based access control, policy enforcement, and automated governance workflows.
 ---
 ## Author
 
